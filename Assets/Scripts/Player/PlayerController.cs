@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -22,10 +20,10 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(0))
-        {
+        //if (Input.GetMouseButton(0))
+        //{
             Aim();
-        }
+        //}
         if (Input.GetMouseButtonUp(0))
         {
             Shoot();
@@ -48,14 +46,14 @@ public class PlayerController : MonoBehaviour
     {
         _lineRenderer.enabled = false;
 
-        GameObject b = Instantiate(bullet, firePos1.position, Quaternion.identity);
+        GameObject currentBullet = Instantiate(bullet, firePos1.position, Quaternion.identity);
 
         if (transform.localScale.x > 0)
-            b.GetComponent<Rigidbody2D>().AddForce(firePos1.right * _bulletSpeed, ForceMode2D.Impulse);
+            currentBullet.GetComponent<Rigidbody2D>().AddForce(firePos1.right * _bulletSpeed, ForceMode2D.Impulse);
         else
-            b.GetComponent<Rigidbody2D>().AddForce(-firePos1.right * _bulletSpeed, ForceMode2D.Impulse);
+            currentBullet.GetComponent<Rigidbody2D>().AddForce(-firePos1.right * _bulletSpeed, ForceMode2D.Impulse);
 
-        Destroy(b, 2);
+        Destroy(currentBullet, 2);
 
     }
 
