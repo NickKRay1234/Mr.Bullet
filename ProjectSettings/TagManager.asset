@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
   - 
@@ -46,4 +46,7 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 2042042435
+    locked: 0
+  - name: Enemy
+    uniqueID: 727697495
     locked: 0
