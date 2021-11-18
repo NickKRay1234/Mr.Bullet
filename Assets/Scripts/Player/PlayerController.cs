@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
     private Transform handPos;
     private Transform firePos1, firePos2;
 
-    private LineRenderer _lineRenderer;
+    //private LineRenderer _lineRenderer;
     public GameObject bullet;
 
     private void Awake()
@@ -14,8 +14,8 @@ public class PlayerController : MonoBehaviour
         handPos = GameObject.Find("LeftHand").transform;
         firePos1 = GameObject.Find("FirePosition 1").transform;
         firePos2 = GameObject.Find("FirePosition 2").transform;
-        _lineRenderer = GameObject.Find("Gun").GetComponent<LineRenderer>();
-        _lineRenderer.enabled = false;
+        //_lineRenderer = GameObject.Find("Gun").GetComponent<LineRenderer>();
+        //_lineRenderer.enabled = false;
     }
 
     private void Update()
@@ -37,14 +37,14 @@ public class PlayerController : MonoBehaviour
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         handPos.rotation = Quaternion.Slerp(transform.rotation, rotation, _rotateSpeed * Time.deltaTime);
 
-        _lineRenderer.enabled = true;
-        _lineRenderer.SetPosition(0, firePos1.position);
-        _lineRenderer.SetPosition(1, firePos2.position);
+        //_lineRenderer.enabled = true;
+        //_lineRenderer.SetPosition(0, firePos1.position);
+        //_lineRenderer.SetPosition(1, firePos2.position);
     }
 
     private void Shoot()
     {
-        _lineRenderer.enabled = false;
+        //_lineRenderer.enabled = false;
 
         GameObject currentBullet = Instantiate(bullet, firePos1.position, Quaternion.identity);
 
