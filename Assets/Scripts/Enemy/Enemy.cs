@@ -33,5 +33,14 @@ public class Enemy : MonoBehaviour
                 Death();
             GetComponent<Rigidbody2D>().AddForce(new Vector2((direction.x > 0 ? 1 : -1) * 10, direction.y > 0 ? .3f : -.3f), ForceMode2D.Impulse);
         }
+
+        if(target.tag == "Plank")
+        {
+            /*if(target.GetComponent<Rigidbody2D>().velocity.magnitude > 2)
+            {
+                print("Death");
+            }*/
+            print(target.GetComponent<Rigidbody2D>().velocity.magnitude > 2);
+        }
     }
 }
